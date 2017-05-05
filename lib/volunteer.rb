@@ -6,7 +6,6 @@ class Volunteer
     @id = attributes[:id]
   end
 
-
   define_singleton_method (:all) do
     returned_volunteers = DB.exec("SELECT * FROM volunteers;")
     volunteers = []
@@ -46,6 +45,4 @@ define_singleton_method(:find) do |id|
     end
     found_volunteer
   end
-
-
 end

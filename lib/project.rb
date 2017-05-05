@@ -46,6 +46,4 @@ define_singleton_method(:find) do |id|
     end
     found_project
   end
-
-
 end
