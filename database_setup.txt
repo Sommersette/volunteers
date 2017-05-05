@@ -1,23 +1,27 @@
-CREATE DATABASE volunteer_tracker;
-
-CREATE TABLE "projects" (
-"id"  SERIAL ,
-"name" VARCHAR ,
-PRIMARY KEY ("id")
-);
+CREATE DATABASE volunteer_tracker_test;
 
 CREATE TABLE "volunteers" (
 "id"  SERIAL ,
 "name" VARCHAR ,
+"phone" INTEGER ,
+"availability" VARCHAR ,
+PRIMARY KEY ("id")
+);
+
+CREATE TABLE "projects" (
+"id"  SERIAL ,
+"name" VARCHAR ,
+"start date" DATE ,
+"end date" DATE ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "work_plan" (
 "id"  SERIAL ,
-"id_volunteers" INTEGER ,
 "id_projects" INTEGER ,
+"id_volunteers" INTEGER ,
 PRIMARY KEY ("id")
 );
 
-ALTER TABLE "work_plan" ADD FOREIGN KEY ("id_volunteers") REFERENCES "volunteers" ("id");
 ALTER TABLE "work_plan" ADD FOREIGN KEY ("id_projects") REFERENCES "projects" ("id");
+ALTER TABLE "work_plan" ADD FOREIGN KEY ("id_volunteers") REFERENCES "volunteers" ("id");

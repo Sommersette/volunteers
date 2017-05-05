@@ -1,9 +1,11 @@
 class Volunteer
-  attr_accessor(:name, :id)
+  attr_accessor(:name, :id, :phone, :availability)
 
   define_method(:initialize) do |attributes|
     @name = attributes.fetch(:name)
     @id = attributes[:id]
+    @phone = attributes.fetch(:phone)
+    @availability = attributes.fetch(:availability)
   end
 
   define_singleton_method (:all) do
@@ -12,23 +14,27 @@ class Volunteer
     returned_volunteers.each() do |volunteer|
       name = volunteer.fetch("name")
       id = volunteer.fetch("id").to_i()
-      volunteers.push(Volunteer.new({:name => name, :id => id}))
+      phone = volunteer.fetch("phone")
+      availability = volunteer.fetch("availability")
+      volunteers.push(Volunteer.new({:name => "Lille Skutt", :id => nil, :phone => "1234", :availability => "Mondays"}))
     end
     volunteers
   end
 
   define_method(:save) do
-    result = DB.exec("INSERT INTO volunteers (name) VALUES ('#{name}') RETURNING id;")
+    result = DB.exec("INSERT INTO volunteers (name, phone, availability) VALUES ('#{name}','#{phone}','#{availability}') RETURNING id;")
     @id = result.first().fetch("id").to_i()
   end
 
   define_method(:==) do |new_volunteer|
-    self.name().==(new_volunteer.name())
+    self.name().==(new_volunteer.name()).&(self.phone().==(new_volunteer.phone)).&(self.availability().==(new_volunteer.availability))
   end
 
   define_method(:update) do |attributes|
     @name = attributes.fetch(:name)
     @id = self.id()
+    @phone = attributes.fetch(:phone)
+    @availability = attributes.fetch(:availability)
     DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id}")
   end
 

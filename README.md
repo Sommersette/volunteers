@@ -14,7 +14,7 @@ postgresSQL
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine from https://github.com/Sommersette/volunteers.git, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port localhost:4567.
+You can clone this repository to your machine from  https://github.com/Sommersette/volunteers.git, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port localhost:4567.
 
 Database set up instructions, for your convenience and clarity have been included in the project folder as a file titled: database_setup.txt. To utilize this file it will need to be opened in a text editor or word processor. The postgres server will need to started by entering postgres into a terminal. Then the SQL will need to be started in another terminal by entering psql. Once this is done the text from the text file may be copied and pasted into the psql terminal and then press the ENTER key to execute the production. The database should be set up as volunteer_tracker with resource tables titled projects, volunteers, and a join table of work_plan. The data base and tables once pasted will be ready to use.
 
