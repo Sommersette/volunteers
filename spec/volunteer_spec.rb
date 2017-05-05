@@ -1,19 +1,29 @@
 require "volunteer"
 require "rspec"
+require "spec_helper"
+require "pg"
 require "pry"
 
 
-# example project spec
+describe(Volunteer) do
 
-# describe 'Palindrome#isWord?' do
-#   let(:word) { Palindrome.new }
+  describe('#initialize') do
+    it("initializes the system to add volunteers to it") do
+      test_volunteer = Volunteer.new({:name => "Lille Skutt", :id => nil})
+      expect(test_volunteer.name()).to(eq("Lille Skutt"))
+    end
+  end
 
-#   it "returns true if the word has at least one vowel" do
-#     expect(word.is_word?("word")).to eq true
-#   end
 
-#   it "returns false if the word does not have a vowel" do
-#     expect(word.is_word?("wrd")).to eq false
-#   end
 
-# end
+  # describe('.all') do
+  #   it("starts off without any volunteers in it") do
+  #     expect(Volunteer.all()).to(eq([]))
+  #   end
+  # end
+
+
+
+
+
+end

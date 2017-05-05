@@ -1,0 +1,23 @@
+CREATE DATABASE volunteer_tracker;
+
+CREATE TABLE "projects" (
+"id"  SERIAL ,
+"name" VARCHAR ,
+PRIMARY KEY ("id")
+);
+
+CREATE TABLE "volunteers" (
+"id"  SERIAL ,
+"name" VARCHAR ,
+PRIMARY KEY ("id")
+);
+
+CREATE TABLE "work_plan" (
+"id"  SERIAL ,
+"id_volunteers" INTEGER ,
+"id_projects" INTEGER ,
+PRIMARY KEY ("id")
+);
+
+ALTER TABLE "work_plan" ADD FOREIGN KEY ("id_volunteers") REFERENCES "volunteers" ("id");
+ALTER TABLE "work_plan" ADD FOREIGN KEY ("id_projects") REFERENCES "projects" ("id");
