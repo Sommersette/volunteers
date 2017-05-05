@@ -14,7 +14,12 @@ describe(Volunteer) do
     end
   end
 
-
+  describe("#id") do
+       it("lets you read the volunteer ID") do
+         test_volunteer = Volunteer.new({:name => "Lille Skutt", :id => nil})
+         expect(test_volunteer.id()).to(eq(nil))
+       end
+     end
 
   # describe('.all') do
   #   it("starts off without any volunteers in it") do
