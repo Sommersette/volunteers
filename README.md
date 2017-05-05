@@ -9,10 +9,14 @@ Examples: Chrome, Safari
 
 Ruby 2.3.1
 Bundler
+postgresSQL
+
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port localhost:4567.
+Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine from https://github.com/Sommersette/volunteers.git, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port localhost:4567.
+
+Database set up instructions, for your convenience and clarity have been included in the project folder as a file titled: database_setup.txt. To utilize this file it will need to be opened a text editor or word processor. The postgres server will need to started by entering postgres into a terminal. Then the psql will need to be started in another terminal. Once this is done the text from the text file may be copied and pasted into the psql terminal. The database should be set up and ready to use. 
 
 ## Built With
 
@@ -23,6 +27,8 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 * Bootstrap https://getbootstrap.com/
 * ES6
 * Jquery https://jquery.com/
+* postgres
+* SQL
 
 ## Specifications
 
