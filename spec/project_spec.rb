@@ -1,7 +1,6 @@
 require "project"
-require "rspec"
 require "spec_helper"
-require "pg"
+require "rspec"
 require "pry"
 
 
@@ -72,4 +71,17 @@ describe(Project) do
      expect(Project.find(test_project2.id())).to(eq(test_project2))
     end
   end
+
+  describe("#list_volunteers") do
+    it("returns a list of all the volunteers currently assigned to a project") do
+      test_project = Project.new({:name => "Dunderhonung", :id => nil})
+      test_project.save()
+      test_volunteer = Volunteer.new({:name => "Lille Skutt", :id => nil})
+      test_volunteer.save()
+      test_volunteer2 = Volunteer.new({:name => "Bamse", :id => nil})
+      test_volunteer2.save()
+      expect(test_project.list_volunteers()).to(eq([]))
+    end
+  end
+
 end

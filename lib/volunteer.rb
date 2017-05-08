@@ -13,7 +13,8 @@ class Volunteer
     returned_volunteers.each() do |volunteer|
       name = volunteer["name"]
       id = volunteer["id"].to_i()
-      volunteers.push(Volunteer.new({:name => "Lille Skutt", :id => nil, :project_id => project_id}))
+      project_id = volunteer["project_id"].to_i()
+      volunteers.push(Volunteer.new({:name => name, :id => id, :project_id => project_id}))
     end
     volunteers
   end
