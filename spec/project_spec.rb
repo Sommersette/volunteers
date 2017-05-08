@@ -64,8 +64,8 @@ describe(Project) do
     end
 
   describe(".find") do
-    it("returns a project by name") do
-      test_project =  Project.new({:name => "Dunderhonung", :id => nil})
+    it("returns a project by id") do
+      test_project = Project.new({:name => "Dunderhonung", :id => nil})
       test_project.save()
       test_project2 = Project.new({:name => "Thunder Honey", :id => nil})
       test_project2.save()

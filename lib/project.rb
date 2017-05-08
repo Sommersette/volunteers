@@ -2,14 +2,14 @@ class Project
   attr_accessor(:name, :id)
 
   define_method(:initialize) do |attributes|
-    @name = attributes.fetch(:name)
+    @name = attributes[:name]
     @id = attributes[:id]
   end
 
 
   define_singleton_method (:all) do
-    returned_projects = DB.exec("SELECT * FROM projects;")
     projects = []
+    returned_projects = DB.exec("SELECT * FROM projects;")
     returned_projects.each() do |project|
       name = project.fetch("name")
       id = project.fetch("id").to_i()
